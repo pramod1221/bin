@@ -1,0 +1,363 @@
+// Main / Home page styles
+
+@import 'reset';
+@import 'globals';
+@import 'utility';
+
+// Section: Hero
+
+.hero {
+  margin-inline:auto;
+  position:relative;
+  padding-inline: calc((100vw - $inner_max_width)/2);
+  img {
+    width:100%;
+    object-fit: cover;
+  }
+  h1 {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    color: $hero_red;
+    font-size: 6rem;
+    font-weight:600;
+  }
+}
+
+// Section: Copy generic
+
+.copy {
+  min-width:600px;
+  width: $w50p;
+  max-width:calc($max_width/2);
+  margin-inline: auto;
+}
+
+// Section: Images generic
+
+.images1 {
+  display: flex;
+  max-width: 100%;
+  margin-inline:auto;
+}
+.images1_images {
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+  
+}
+.images1_image1 {
+  align-self: center;
+  transform:translateX(calc((100vw - $inner_max_width)/2));
+}
+.images1_image2 {
+  display: flex;
+  place-content: center;
+  padding: calc(100vw - $inner_max_width);
+  padding-right: calc((100vw - $inner_max_width)/2);
+  background-color: $pastel_yellow;
+}
+
+.video_wrapper {
+  position: relative;
+}
+
+// Section: Video 1
+.video1 {
+  min-width: 600px;
+  width: $w50p;
+  max-width: calc($max_width/2);
+  margin-inline: auto;
+  img {
+    width: $inner_max_width;
+  }
+  .play {
+    width:6.25rem;
+    height:6.25rem;
+    background-color: $blue;
+    border-radius: 50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-content: center;
+    svg {
+      width:2rem;
+      max-width: 2rem;
+      margin-left:0.6rem;
+    }
+  }
+  
+}
+
+
+figcaption {
+  font-size: 0.875rem;
+  padding: 0.5em 0;
+  font-weight: 700;
+}
+
+// Section: Images 2
+
+.images2 {
+  display: flex;
+  max-width: 100%;
+}
+
+.images2_left_wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: $pastel_green;
+  padding: calc((100vw - $inner_max_width));
+  padding-left: calc((100vw - $inner_max_width)/2);
+}
+
+.images2_images {
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.images2_image1 {
+  padding-bottom: calc((100vw - $inner_max_width)/4);
+}
+
+.images2_image2 {
+  padding-top: calc((100vw - $inner_max_width)/4);
+}
+
+.images2_image3 {
+  align-self: center;
+  transform: translateX(calc((-100vw + $inner_max_width)/2));
+}
+
+// Section: Video 2
+
+.video2 {
+  min-width: 600px;
+  width: $w50p;
+  max-width: calc($max_width/2);
+  margin-inline: auto;
+  position: relative;
+  img {
+    width: $inner_max_width;
+  }
+
+  img {
+    width: 100%;
+  }
+  .play {
+    width: 6.25rem;
+    height: 6.25rem;
+    background-color: $blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-content: center;
+
+    svg {
+      width: 2rem;
+      max-width: 2rem;
+      margin-left: 0.6rem;
+    }
+  }
+
+}
+
+// Section: Images 4
+.images4 {
+  display: flex;
+  max-width: $max_width;
+  isolation: isolate;
+  position: relative;
+  min-width: calc((2/3)*100vw);
+  min-height: calc((1.60/3)*100vw);
+  margin-inline:auto;
+  place-content: center;
+}
+
+.images4_purple {
+  position: absolute;
+  width:calc((2/3)*100vw);
+  height:calc(((1.60/3)*100vw));
+  background:$pastel_purple;
+  left:calc(((2/3)*100vw)/4);
+}
+
+.images4_images {
+  flex:1;
+  z-index:2;
+  // display: grid;
+  // place-content: center;
+  align-self: center;
+}
+
+.images4_image1 {
+  padding-inline:calc((100vw - $inner_max_width)/2);
+}
+
+.images4_image2 {
+  padding-left: calc((100vw - $inner_max_width)/2);
+}
+
+// Section: Jobs
+
+.jobs {
+  display: flex;
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: calc((100vw - $inner_max_width)/2);
+}
+.jobs_card {
+  flex:1;
+  a {
+    color:$blue;
+  }
+  a::after {
+    content:"\00a0›";
+  }
+}
+.jobs_content {
+  display: flex;
+  align-items: center;
+  background-color: $pastel_blue;
+  padding-inline: calc((100vw - $inner_max_width)/2);
+}
+
+/* Bootstrap breakpoints */
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+  $max_width: 100vw;
+  $inner_max_width: 81vw;
+  $w600: calc($inner_max_width / 1.9);
+  
+
+  .hero {
+    padding-inline: calc((100vw - $inner_max_width)/2);
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  // Section: Copy generic
+  .copy {
+    min-width:$inner_max_width;
+    width: $inner_max_width;
+  }
+
+  // Section: Video 1
+  .video1 {
+    min-width: $inner_max_width;
+    width: $inner_max_width;
+    .play {
+      width: 3.25rem;
+      height: 3.25rem;
+      svg {
+        width: 1rem;
+        max-width: 1rem;
+        margin-left: 0.3rem;
+      }
+    }
+  }
+
+  // Section: Images 1
+  .images1_image1 {
+    transform: translateX(calc((100vw - $inner_max_width)/2));
+  }
+
+  .images1_image2 {
+    padding: calc(100vw - $inner_max_width);
+    padding-right: calc((100vw - $inner_max_width)/2);
+  }
+
+    // Section: Video 2
+    .video2 {
+      min-width: $inner_max_width;
+      width: $inner_max_width;
+  
+      .play {
+        width: 3.25rem;
+        height: 3.25rem;
+  
+        svg {
+          width: 1rem;
+          max-width: 1rem;
+          margin-left: 0.3rem;
+        }
+      }
+    }
+
+  // Section: Images 2
+  .images2_left_wrapper {
+    padding: calc((100vw - $inner_max_width));
+    padding-left: calc((100vw - $inner_max_width)/2);
+  }
+
+  .images2_image1 {
+    padding-bottom: calc((100vw - $inner_max_width)/4);
+  }
+
+  .images2_image2 {
+    padding-top: calc((100vw - $inner_max_width)/4);
+  }
+
+  .images2_image3 {
+    transform: translateX(calc((-100vw + $inner_max_width)/2));
+  }
+  
+  // Section: Images 4
+  .images4_image1 {
+    padding-left: calc((100vw - $inner_max_width)/2);
+  }
+
+  // Section: Jobs
+  .jobs {
+    max-width: $inner_max_width;
+    flex-direction: column;
+    padding-inline: 0;
+  }
+  .jobs_content {
+    padding: calc((100vw - $inner_max_width)/2);
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 576px and up) */
+@media only screen and (min-width: 576px) {
+  
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .images1_images {
+    flex:1;
+  }
+
+  .images2_left_wrapper {
+    flex:1;  
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+}
+
+/* Extra large devices (large laptops and desktops, 1400px and up) */
+@media only screen and (min-width: 1400px) {
+
+}
+
+
+

@@ -1,0 +1,100 @@
+/* some global utility classes */
+
+$base-size: 1rem;
+
+// Define map (key value pair)
+$sizes: (
+        "size-0_5":$base-size,
+        "size-1":$base-size,
+        "size-1_5":$base-size * 1.5,
+        "size-2":$base-size * 2,
+        "size-2_5":$base-size * 2.5,
+        "size-3":$base-size * 3,
+        "size-3_5":$base-size * 3.5,
+        "size-4":$base-size * 4,
+        "size-4_5":$base-size * 4.5,
+        "size-5":$base-size * 5
+);
+
+// Loop through map and create utility classes
+// @each $key, $value in $map 
+@each $size,
+$size_value in $sizes {
+
+    // $number: string.slice($size-number, 4); // If we need all chars starting from and including 4th position of the string
+    .font-#{$size} {
+        font-size: $size-value;
+    }
+}
+
+$padding-sizes: (
+    "size-1":$base-size,
+    "size-1_5":$base-size * 1.5,
+    "size-2":$base-size * 2,
+    "size-2_5":$base-size * 2.5,
+    "size-3":$base-size * 3,
+    "size-3_5":$base-size * 3.5,
+    "size-4":$base-size * 4,
+    "size-4_5":$base-size * 4.5,
+    "size-5":$base-size * 5
+);
+
+// Loop through map and create utility classes
+// @each $key, $value in $map 
+@each $padding_size,
+$size_value in $padding-sizes {
+
+    // $number: string.slice($size-number, 4); // If we need all chars starting from and including 4th position of the string
+    .global-pt-#{$padding_size} {
+        padding-top: $size-value;
+    }
+
+    .global-pb-#{$padding_size} {
+        padding-bottom: $size-value;
+    }
+
+    .global-pl-#{$padding_size} {
+        padding-left: $size-value;
+    }
+
+    .global-pr-#{$padding_size} {
+        padding-right: $size-value;
+    }
+}
+
+$margin-sizes: $padding-sizes;
+
+// Loop through map and create utility classes
+// @each $key, $value in $map 
+@each $margin_size,
+$size_value in $margin-sizes {
+
+    // $number: string.slice($size-number, 4); // If we need all chars starting from and including 4th position of the string
+    .global-mt-#{$margin_size} {
+        margin-top: $size-value;
+    }
+
+    .global-mb-#{$margin_size} {
+        margin-bottom: $size-value;
+    }
+
+    .global-ml-#{$margin_size} {
+        margin-left: $size-value;
+    }
+
+    .global-mr-#{$margin_size} {
+        margin-right: $size-value;
+    }
+}
+
+.mx-auto {
+    margin-inline: auto;
+}
+
+// make full bleed images even though it is in a container
+.fullbleed_image {
+    width: 100vw;
+    margin: 0 calc(-50vw + 50%);
+    // @include pseudo($after_content: 'hello');
+    @include pseudo();
+}
